@@ -15,9 +15,9 @@ class myApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialRoute: "/",
       // routes: {
-      //   "/": (context) => tpage(),
+      //   "/": (context) => dat(),
       // },
-      home: tpage(),
+      home: datetime(),
     );
   }
 }
