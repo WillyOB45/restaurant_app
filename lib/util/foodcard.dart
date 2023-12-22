@@ -37,12 +37,14 @@ class foodcard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Align(
-                      alignment: Alignment.centerLeft,
+                  Positioned(
+                      right: 10,
+                      left: 0,
                       child:
                           circleimage(child: Image.asset("assets/pepsi.png"))),
-                  Align(
-                      alignment: Alignment.centerRight,
+                  Positioned(
+                      left: 5,
+                      right: 5,
                       child:
                           circleimage(child: Image.asset("assets/pepsi.png")))
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restauantsapp/pages/homepage.dart';
+// import 'package:restauantsapp/pages/homepage.dart';
+import 'package:restauantsapp/pages/tpage.dart';
 
 void main() {
   runApp(myApp());
@@ -12,10 +13,11 @@ class myApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/",
-      routes: {
-        "/": (context) => homepage(),
-      },
+      // initialRoute: "/",
+      // routes: {
+      //   "/": (context) => tpage(),
+      // },
+      home: tpage(),
     );
   }
 }
