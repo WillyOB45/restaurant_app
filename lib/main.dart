@@ -13,11 +13,12 @@ class myApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.purple),
       // initialRoute: "/",
       // routes: {
       //   "/": (context) => dat(),
       // },
-      home: datetime(),
+      home: tpage(),
     );
   }
 }

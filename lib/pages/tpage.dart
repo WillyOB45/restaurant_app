@@ -1,50 +1,53 @@
 import 'package:flutter/material.dart';
 
-class datetime extends StatefulWidget {
-  const datetime({super.key});
+class tpage extends StatefulWidget {
+  const tpage({super.key});
 
   @override
-  State<datetime> createState() => _datetimeState();
+  State<tpage> createState() => _tpageState();
 }
 
-class _datetimeState extends State<datetime> {
-  DateTime _date = DateTime.now();
-  void _datetime() {
-    showDatePicker(
-            context: context,
-            initialDate: DateTime.now(),
-            firstDate: DateTime(1999),
-            lastDate: DateTime(3000))
-        .then((value) => () {
-              setState(() {
-                _date = value!;
-              });
-            });
+class _tpageState extends State<tpage> {
+  TimeOfDay _currentime = TimeOfDay.now();
+
+  void _timenow() {
+    showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    ).then((value) => () {
+          setState(() {
+            _currentime = value!;
+          });
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 300,
-            ),
-            Text(_date.month.toString()),
-            SizedBox(
-              height: 20,
-            ),
-            MaterialButton(
-              color: Colors.purple,
-              onPressed: _datetime,
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          SizedBox(
+            height: 500,
+          ),
+          Text(_currentime.toString()),
+          SizedBox(
+            height: 30,
+          ),
+          Center(
+            child: MaterialButton(
+              splashColor: Colors.green.shade400,
+              height: 50,
+              minWidth: 200,
+              onPressed: _timenow,
+              color: Colors.green,
               child: Text(
-                "choose your date",
+                "display time",
                 style: TextStyle(color: Colors.white),
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
