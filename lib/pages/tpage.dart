@@ -8,46 +8,42 @@ class tpage extends StatefulWidget {
 }
 
 class _tpageState extends State<tpage> {
-  TimeOfDay _currentime = TimeOfDay.now();
+  var _imageschanges = "assets/sprite.png";
 
-  void _timenow() {
-    showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-    ).then((value) => () {
-          setState(() {
-            _currentime = value!;
-          });
-        });
+  void _changesimage() {
+    setState(() {
+      _imageschanges = "assets/coke.png";
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          SizedBox(
-            height: 500,
-          ),
-          Text(_currentime.toString()),
-          SizedBox(
-            height: 30,
-          ),
-          Center(
-            child: MaterialButton(
-              splashColor: Colors.green.shade400,
-              height: 50,
-              minWidth: 200,
-              onPressed: _timenow,
-              color: Colors.green,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300,
+            ),
+            Container(
+              height: 200,
+              width: 200,
+              child: Image.asset(_imageschanges),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            MaterialButton(
+              // animationDuration: Duration(milliseconds: 2000),
+              onPressed: _changesimage,
+              color: Colors.purple,
               child: Text(
-                "display time",
+                "change image",
                 style: TextStyle(color: Colors.white),
               ),
-            ),
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

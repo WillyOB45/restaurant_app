@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 // import 'package:restauantsapp/pages/homepage.dart';
 import 'package:restauantsapp/pages/tpage.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(myApp());
 }
 
