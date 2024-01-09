@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class tpage extends StatefulWidget {
   const tpage({super.key});
@@ -8,43 +9,57 @@ class tpage extends StatefulWidget {
 }
 
 class _tpageState extends State<tpage> {
-  var _imageschanges = "assets/sprite.png";
-
-  void _changesimage() {
-    setState(() {
-      _imageschanges = "assets/coke.png";
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Column(
+          child: Slidable(
+        endActionPane: ActionPane(motion: StretchMotion(), children: [
+          SlidableAction(
+            onPressed: (context) {},
+            icon: Icons.share,
+            label: "s h a r e",
+            backgroundColor: Colors.pinkAccent.shade100,
+          ),
+          SlidableAction(
+            onPressed: (context) {},
+            icon: Icons.message,
+            label: "s e n d",
+            backgroundColor: Colors.pinkAccent.shade700,
+          ),
+        ]),
+        startActionPane: ActionPane(
+          motion: BehindMotion(),
           children: [
-            SizedBox(
-              height: 300,
+            SlidableAction(
+              onPressed: (context) {},
+              icon: Icons.phone,
+              label: "p h o n e ",
+              backgroundColor: Colors.pinkAccent.shade400,
             ),
-            Container(
-              height: 200,
-              width: 200,
-              child: Image.asset(_imageschanges),
+            SlidableAction(
+              onPressed: (context) {},
+              icon: Icons.message,
+              label: "c h a t ",
+              backgroundColor: Colors.pinkAccent.shade200,
             ),
-            SizedBox(
-              height: 30,
-            ),
-            MaterialButton(
-              // animationDuration: Duration(milliseconds: 2000),
-              onPressed: _changesimage,
-              color: Colors.purple,
-              child: Text(
-                "change image",
-                style: TextStyle(color: Colors.white),
-              ),
-            )
           ],
         ),
-      ),
+        child: Container(
+          color: Colors.deepPurple,
+          child: ListTile(
+              leading: Icon(Icons.person),
+              title: Text(
+                "C h u k s",
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Text(
+                "u s e r",
+                style: TextStyle(color: Colors.white),
+              )),
+        ),
+      )),
     );
   }
 }

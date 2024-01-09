@@ -1,56 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:restauantsapp/constants/constants.dart';
-import 'package:restauantsapp/util/foodcard.dart';
 
-class homepage extends StatelessWidget {
-  const homepage({super.key});
+class tpage extends StatefulWidget {
+  const tpage({super.key});
 
   @override
+  State<tpage> createState() => _tpageState();
+}
+
+class _tpageState extends State<tpage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: secondarycolor,
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: [
-          SizedBox(
-            height: 40,
-          ),
-          // loaction
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Icon(
-                Icons.location_on_outlined,
-                color: primarycolor,
-                size: (50),
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Text(
-                "Boston, MA",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: (20)),
-              ),
-              SizedBox(
-                width: 150,
-              ),
-              Icon(
-                Icons.search_sharp,
-                color: Colors.black,
-                size: (30),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
-
-          //food card
-          foodcard(),
-
-          //tabar
-        ]),
-      ),
-    );
+    return Center(
+        child: Container(
+      color: Colors.deepPurple,
+      child: ListTile(
+          leading: Icon(Icons.person),
+          subtitle: Text(
+            "u s e r",
+            style: TextStyle(color: Colors.white),
+          )),
+    ));
   }
 }
