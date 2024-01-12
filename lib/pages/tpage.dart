@@ -20,7 +20,7 @@ class _tpageState extends State<tpage> {
           child: CountryCodePicker(
             initialSelection: "NG",
             backgroundColor: Colors.purple,
-            hideSearch: false,
+            hideSearch: true,
             closeIcon: Icon(Icons.login),
           ),
         ),
