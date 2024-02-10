@@ -39,6 +39,7 @@ dependencies:
   flutter_slidable: ^3.0.1
   slide_to_act: ^2.0.2
   country_code_picker: ^3.0.0
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:
