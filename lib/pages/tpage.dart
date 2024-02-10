@@ -20,15 +20,12 @@ class _tpageState extends State<tpage> {
           padding: const EdgeInsets.all(8.0),
           child: MaterialButton(
             onPressed: () {
-              Get.defaultDialog(
-                backgroundColor: Colors.purple.shade300,
-                barrierDismissible: true,
-                title: "get dialog",
-                content: Text(
-                  "this is a get dialog",
-                  style: TextStyle(color: Colors.white),
-                ),
-              );
+              Get.snackbar("show dialog", "this is a show dialog",
+                  colorText: Colors.white,
+                  backgroundColor: Colors.purple.shade300,
+                  snackPosition: SnackPosition.TOP,
+                  animationDuration: Duration(seconds: 1),
+                  duration: Duration(seconds: 2));
             },
             color: Colors.purple,
             textColor: Colors.white,
