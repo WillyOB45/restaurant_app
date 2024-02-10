@@ -25,7 +25,8 @@ class _tpageState extends State<tpage> {
                   backgroundColor: Colors.purple.shade300,
                   snackPosition: SnackPosition.TOP,
                   animationDuration: Duration(seconds: 1),
-                  duration: Duration(seconds: 2));
+                  duration: Duration(seconds: 2),
+                  forwardAnimationCurve: Curves.bounceInOut);
             },
             color: Colors.purple,
             textColor: Colors.white,
