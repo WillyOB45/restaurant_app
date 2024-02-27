@@ -1,24 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class tpage extends StatefulWidget {
-  const tpage({super.key});
+class homePage extends StatefulWidget {
+  const homePage({super.key});
 
   @override
-  State<tpage> createState() => _tpageState();
+  State<homePage> createState() => _homePageState();
 }
 
-class _tpageState extends State<tpage> {
+class _homePageState extends State<homePage> {
+  var count = 0.obs;
+
+  increment() {
+    setState(() {
+      count++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Container(
-      color: Colors.deepPurple,
-      child: ListTile(
-          leading: Icon(Icons.person),
-          subtitle: Text(
-            "u s e r",
-            style: TextStyle(color: Colors.white),
-          )),
-    ));
+    return Scaffold(
+        backgroundColor: Colors.green,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Obx(() => Text("your count is ${count}")),
+              const SizedBox(
+                height: 20,
+              ),
+              MaterialButton(
+                  onPressed: () => increment,
+                  color: Colors.purple,
+                  textColor: Colors.white,
+                  child: Text("click here")),
+            ],
+          ),
+        ));
   }
 }

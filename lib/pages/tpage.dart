@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:slide_to_act/slide_to_act.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:get/get.dart';
+import 'package:restauantsapp/pages/homepage.dart';
 
 class tpage extends StatefulWidget {
   const tpage({super.key});
@@ -20,13 +20,7 @@ class _tpageState extends State<tpage> {
           padding: const EdgeInsets.all(8.0),
           child: MaterialButton(
             onPressed: () {
-              Get.snackbar("show dialog", "this is a show dialog",
-                  colorText: Colors.white,
-                  backgroundColor: Colors.purple.shade300,
-                  snackPosition: SnackPosition.TOP,
-                  animationDuration: Duration(seconds: 1),
-                  duration: Duration(seconds: 2),
-                  forwardAnimationCurve: Curves.bounceInOut);
+              Get.to(homePage(), transition: Transition.rightToLeft);
             },
             color: Colors.purple,
             textColor: Colors.white,
