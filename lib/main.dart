@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-// import 'package:restauantsapp/pages/homepage.dart';
-import 'package:restauantsapp/pages/tpage.dart';
+import 'package:restauantsapp/pages/homepage.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(myApp());
+  runApp(const myApp());
 }
 
 class myApp extends StatelessWidget {
@@ -14,14 +10,9 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.purple),
-      // initialRoute: "/",
-      // routes: {
-      //   "/": (context) => dat(),
-      // },
-      home: tpage(),
+      home: homePage(),
     );
   }
 }

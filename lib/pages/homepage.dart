@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
 class homePage extends StatefulWidget {
   const homePage({super.key});
@@ -9,32 +9,26 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
-  var count = 0.obs;
+  bool isvalue = false;
 
-  increment() {
-    setState(() {
-      count++;
-    });
-  }
+  ThemeData _lightMode = ThemeData.dark(useMaterial3: true)
+      .copyWith(scaffoldBackgroundColor: Colors.grey);
+
+  ThemeData _darkMode = ThemeData.dark(useMaterial3: true);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Obx(() => Text("your count is ${count}")),
-              const SizedBox(
-                height: 20,
-              ),
-              MaterialButton(
-                  onPressed: () => increment,
-                  color: Colors.purple,
-                  textColor: Colors.white,
-                  child: Text("click here")),
-            ],
+          child: Switch(
+            value: isvalue,
+            onChanged: (value) {
+              isvalue ? _darkMode : _lightMode;
+              setState(() {
+                isvalue = value;
+              });
+            },
           ),
         ));
   }
